@@ -8,9 +8,14 @@ const __dirname = path.dirname(__filename);
 const files = __dirname + '/files';
 
 const rename = async () => {
-    // Write your code here 
-    fs.rename(files + '/wrongFilename.txt', files + '/properFilename.md')
-    .catch(() => {throw new Error(ERROR)});
+    // Write your code here
+    const properFile = files + '/properFilename.md';
+    fs.stat(properFile)
+    .catch(() => {
+      fs.rename(files + '/wrongFilename.txt', properFile)
+      .catch(() => {throw new Error(ERROR)});
+    })
+    .then(()=> {throw new Error(ERROR)});
 };
 
 await rename();
