@@ -14,8 +14,6 @@ const read = async () => {
     stream.on('data', (data) => {
       stdout.write(data + '\n\n');
     })
-
-
 };
 
 await read();
