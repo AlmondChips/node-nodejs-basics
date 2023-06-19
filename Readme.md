@@ -1,3 +1,3 @@
 # Node.js basics
 
-## !!! Please don't submit Pull Requests to this repository !!!
+All tasks has been completed in the main brunch directly.
